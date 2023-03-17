@@ -1,0 +1,66 @@
+﻿@model webnangcao1.Models.taikhoan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/adminLayout1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>taikhoan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tentaikhoan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tentaikhoan)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Matkhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matkhau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fullname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fullname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quyen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quyen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sdt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sdt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Tentaikhoan }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

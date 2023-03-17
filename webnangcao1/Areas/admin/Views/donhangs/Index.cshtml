@@ -1,0 +1,87 @@
+﻿@model IEnumerable<webnangcao1.Models.donhang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/adminLayout1.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Quản lý đơn hàng</h2>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Đơn hàng</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+
+                </div>
+            </div>
+            <div class="ibox-content">
+
+
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.dathanhtoan)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.tinhtrangdathang)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ngaydat)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ngaygiao)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.taikhoan.Matkhau)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.dathanhtoan)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tinhtrangdathang)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ngaydat)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ngaygiao)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.taikhoan.Matkhau)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Madonhang }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.Madonhang }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Madonhang })
+                            </td>
+                        </tr>
+                    }
+
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

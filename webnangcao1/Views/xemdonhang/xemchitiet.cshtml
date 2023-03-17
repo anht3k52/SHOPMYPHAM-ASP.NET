@@ -1,0 +1,42 @@
+﻿@model IEnumerable<webnangcao1.Models.chitietdon>
+@{
+    ViewBag.Title = "xemchitiet";
+    Layout = "~/Views/Shared/user_Layout1.cshtml";
+}
+<br />
+<br />
+<center>
+    <h2>Chi tiết đơn hàng</h2>
+</center>
+<br />
+<br />
+<table class="table table-bordered" style="background: #FDE2CA">
+    <tr>
+        <th>
+            Sản phẩm
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Thành tiền
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sanpham.Tensanpham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soluong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.thanhtien)
+            </td>
+        </tr>
+    }
+
+</table>
+

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<webnangcao1.Models.donhang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/user_Layout1.cshtml";
+}
+<br />
+<br />
+<center>
+    <h2>Danh sách đơn hàng</h2>
+</center>
+
+<br />
+
+<table class="table table-bordered" style="background: #FDE2CA">
+    <tr>
+        <th>
+            Họ tên
+        </th>
+        <th>
+            Ngày đặt
+        </th>
+        <th>
+            Tình trạng đơn hàng
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modeitem => item.taikhoan.fullname)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ngaydat)
+    </td>
+    <td>
+        <div style="color:red">Đa dat hang</div>
+    </td>
+    <td>
+        <button class="btn-primary">
+            @Html.ActionLink("Chi tiết", "xemchitiet", new { id = item.Madonhang }, new { @style = "color:white;" })
+        </button>
+    </td>
+</tr>
+    }<br /><br />
+</table>

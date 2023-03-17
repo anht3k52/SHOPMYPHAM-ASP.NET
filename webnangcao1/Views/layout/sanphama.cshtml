@@ -1,0 +1,46 @@
+﻿@model List<webnangcao1.Models.Sanpham>
+<ul class="products-listItem">
+    @foreach (var item in Model)
+    {
+<li class="products">
+    <div class="offer">
+        @item.thuoctinh
+    </div>
+<div class="thumbnail">
+    <a href="@Url.Action("xemchitiet", "chitietsanpham", new { masanpham = item.Masanpham })">
+        <img src="@item.Hinhchinh" alt="Product Name">
+    </a>
+</div>
+    <div class="product-list-description">
+        <div class="productname">
+            @item.Tensanpham
+        </div>
+    
+        <p>
+           @item.Thongtin
+        </p>
+        <div class="list_bottom">
+            <div class="price">
+                <span class="new_price">
+                    @item.Gia
+                    <sup>
+                        vnd
+                    </sup>
+                </span>
+                <span class="old_price">
+                   @item.Gia
+                    <sup>
+                        vnd
+                    </sup>
+                </span>
+            </div>
+            <div class="button_group">
+                <div class="button_group">@Html.ActionLink("Thêm vào giỏ hàng", "themsanpham", "cart", new { masanpham = item.Masanpham }, new { @class = "button add-cart" })</div>
+              
+            </div>
+        </div>
+    </div>
+    
+</li>
+    }
+</ul>

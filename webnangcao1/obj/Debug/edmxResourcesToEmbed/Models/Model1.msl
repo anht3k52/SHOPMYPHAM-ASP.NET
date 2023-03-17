@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quanlyshopModelStoreContainer" CdmEntityContainer="quanlyshopEntities">
+    <EntitySetMapping Name="chitietdons">
+      <EntityTypeMapping TypeName="quanlyshopModel.chitietdon">
+        <MappingFragment StoreEntitySet="chitietdon">
+          <ScalarProperty Name="Madonhang" ColumnName="Madonhang" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+          <ScalarProperty Name="Masanpham" ColumnName="Masanpham" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="donhangs">
+      <EntityTypeMapping TypeName="quanlyshopModel.donhang">
+        <MappingFragment StoreEntitySet="donhang">
+          <ScalarProperty Name="Madonhang" ColumnName="Madonhang" />
+          <ScalarProperty Name="Tentaikhoan" ColumnName="Tentaikhoan" />
+          <ScalarProperty Name="dathanhtoan" ColumnName="dathanhtoan" />
+          <ScalarProperty Name="tinhtrangdathang" ColumnName="tinhtrangdathang" />
+          <ScalarProperty Name="ngaydat" ColumnName="ngaydat" />
+          <ScalarProperty Name="ngaygiao" ColumnName="ngaygiao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loaisanphams">
+      <EntityTypeMapping TypeName="quanlyshopModel.Loaisanpham">
+        <MappingFragment StoreEntitySet="Loaisanpham">
+          <ScalarProperty Name="Maloaisanpham" ColumnName="Maloaisanpham" />
+          <ScalarProperty Name="Tenloaisanpham" ColumnName="Tenloaisanpham" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sanphams">
+      <EntityTypeMapping TypeName="quanlyshopModel.Sanpham">
+        <MappingFragment StoreEntitySet="Sanpham">
+          <ScalarProperty Name="Masanpham" ColumnName="Masanpham" />
+          <ScalarProperty Name="Maloaisanpham" ColumnName="Maloaisanpham" />
+          <ScalarProperty Name="Tensanpham" ColumnName="Tensanpham" />
+          <ScalarProperty Name="Thongtin" ColumnName="Thongtin" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="Hinhchinh" ColumnName="Hinhchinh" />
+          <ScalarProperty Name="Hinh1" ColumnName="Hinh1" />
+          <ScalarProperty Name="Hinh2" ColumnName="Hinh2" />
+          <ScalarProperty Name="Hinh3" ColumnName="Hinh3" />
+          <ScalarProperty Name="Hinh4" ColumnName="Hinh4" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="Tinhtrang" ColumnName="Tinhtrang" />
+          <ScalarProperty Name="thuoctinh" ColumnName="thuoctinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="taikhoans">
+      <EntityTypeMapping TypeName="quanlyshopModel.taikhoan">
+        <MappingFragment StoreEntitySet="taikhoan">
+          <ScalarProperty Name="Tentaikhoan" ColumnName="Tentaikhoan" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="quyen" ColumnName="quyen" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

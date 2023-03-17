@@ -1,0 +1,50 @@
+﻿@model List<webnangcao1.Models.Sanpham>
+
+<style>
+    .thumbnail img {
+        width: auto !important;
+        height: 220px !important;
+    }
+</style>
+
+<div class="@ViewBag.Type.ToLower()-products">
+    <h3 class="title"><strong>@ViewBag.Type</strong> Products</h3>
+    <div class="control"><a id="prev_@ViewBag.Type.ToLower()" class="prev" href="#">&lt;</a><a id="next_@ViewBag.Type.ToLower()" class="next" href="#">&gt;</a></div>
+    <ul id="@ViewBag.Type.ToLower()">
+        <li>
+            <div class="row">
+                @for (int i = 0; i < 4 && i < Model.Count; i++)
+                {
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="products">
+                            <div class="thumbnail"><a href="@Url.Action("xemchitiet", "chitietsanpham", new { masanpham = Model[i].Masanpham })"><img src="@Model[i].Hinhchinh" alt="Product Name"></a></div>
+                            <div class="productname">@Model[i].Tensanpham</div>
+                            <h4 class="price">@Html.FormatValue(Model[i].Gia, "{0:#,###}")</h4>       
+                            <div class="button_group">@Html.ActionLink("Thêm vào giỏ", "themsanpham", "cart", new { masanpham = Model[i].Masanpham }, new { @class = "button add-cart" })</div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                @for (int i = 4; i < 8 && i < Model.Count; i++)
+                {
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="products">
+                            <div class="thumbnail"><a href="@Url.Action("xemchitiet", "chitietsanpham", new { masanpham = Model[i].Masanpham })"><img src="@Model[i].Hinhchinh" alt="Product Name"></a></div>
+                            <div class="productname">@Model[i].Tensanpham</div>
+                            <h4 class="price">@Model[i].Gia</h4>
+                            <div class="button_group">
+                                @Html.ActionLink("Thêm vào giỏ", "themsanpham", "cart", new { masanpham = Model[i].Masanpham }, new { @class = "button add-cart" })                           
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,221 @@
+﻿@model webnangcao1.Models.Sanpham
+@{ ViewBag.Title = "xemchitiet";
+    Layout = "~/Views/Shared/user_Layout1.cshtml"; 
+}
+
+<body>
+    <div class="wrapper">
+
+        <div class="clearfix">
+        </div>
+        <div class="container_fullwidth">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="products-details">
+                            <div class="preview_image">
+                                <div class="preview-small">
+                                    <img id="zoom_03" src="@Model.Hinhchinh" data-zoom-image="@Model.Hinhchinh" alt="">
+                                </div>
+                                <div class="thum-image">
+                                    <ul id="gallery_01" class="prev-thum">
+                                        <li>
+                                            <a href="@Model.Hinhchinh" data-image="@Model.Hinhchinh" data-zoom-image="@Model.Hinhchinh">
+                                                <img src="@Model.Hinhchinh" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Model.Hinh1" data-image="~/ss/user/images/products/medium/products-02.jpg" data-zoom-image="~/ss/user/images/products/Large/products-02.jpg">
+                                                <img src="@Model.Hinh1" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Model.Hinh2" data-image="~/ss/user/images/products/medium/products-03.jpg" data-zoom-image="~/ss/user/images/products/Large/products-03.jpg">
+                                                <img src="@Model.Hinh2" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Model.Hinh3" data-image="~/ss/user/images/products/medium/products-04.jpg" data-zoom-image="~/ss/user/images/products/Large/products-04.jpg">
+                                                <img src="@Model.Hinh3" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Model.Hinh4" data-image="~/ss/user/images/products/medium/products-05.jpg" data-zoom-image="~/ss/user/images/products/Large/products-05.jpg">
+                                                <img src="@Model.Hinh4" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a class="control-left" id="thum-prev" href="javascript:void(0);">
+                                        <i class="fa fa-chevron-left">
+                                        </i>
+                                    </a>
+                                    <a class="control-right" id="thum-next" href="javascript:void(0);">
+                                        <i class="fa fa-chevron-right">
+                                        </i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="products-description">
+                                <h5 class="name">
+                                    @Model.Tensanpham
+                                </h5>
+
+                                <p>
+                                    Loại sản phẩm:
+                                    <span class=" light-red">
+                                        @Model.Loaisanpham
+                                    </span>
+                                </p>
+                                <p>
+                                    @Model.Thongtin
+                                </p>
+                                <hr class="border">
+                                <div class="price">
+                                    Price :
+                                    <span class="new_price">
+                                        @Model.Gia
+                                        <sup>
+                                            $
+                                        </sup>
+                                    </span>
+                                    <span class="old_price">
+                                        @Model.Gia
+                                        <sup>
+                                            $
+                                        </sup>
+                                    </span>
+                                </div>
+                                <hr class="border">
+                                <div class="wided">
+
+                                    <div class="button_group">
+                                        <div class="button_group">@Html.ActionLink("them moi", "themsanpham", "cart", new { masanpham = Model.Masanpham }, new { @class = "button add-cart" })</div>
+
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                                <hr class="border">
+                                <img src="~/ss/user/images/share.png" alt="" class="pull-right">
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                        <div class="tab-box">
+                            <div id="tabnav">
+                                <ul>
+                                    <li>
+                                        <a href="#Descraption">
+                                            DESCRIPTION
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="tab-content-wrap">
+                                <div class="tab-content" id="Descraption">
+                                    <p>
+                                       Sản Phẩm chất lượng cao uy tín
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                        @Html.Action("danhsachsanpham", "layout", new { Type = "Hot" })
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        
+                        <div class="clearfix">
+                        </div>
+                    
+                        <div class="clearfix">
+                        </div>
+                        <div class="get-newsletter leftbar">
+                            <h3 class="title">
+                                Nhận 
+                                <strong>
+                                    thông tin
+                                </strong>
+                            </h3>
+                            <p>
+                               
+                            </p>
+                            <form>
+                                <input class="email" type="text" name="" placeholder="Your Email...">
+                                <input class="submit" type="submit" value="Submit">
+                            </form>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                        <div class="fbl-box leftbar">
+                            <h3 class="title">
+                                Facebook
+                            </h3>
+                            <span class="likebutton">
+                                <a href="#">
+                                    <img src="~/ss/user/images/fblike.png" alt="">
+                                </a>
+                            </span>
+                            <p>
+                                12k people like Flat Shop.
+                            </p>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    </a>
+                                </li>
+                             
+                            </ul>
+                            <div class="fbplug">
+                                <a href="#">
+                                    <span>
+                                        <img src="~/ss/user/images/fbicon.png" alt="">
+                                    </span>
+                                    Facebook social plugin
+                                </a>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+      
+    </div>
+    <!-- Bootstrap core JavaScript==================================================-->
+    <script type="text/javascript" src="~/ss/user/js/jquery-1.10.2.min.js">
+    </script>
+    <script type="text/javascript" src="~/ss/user/js/bootstrap.min.js">
+    </script>
+    <script defer src="~/ss/user/js/jquery.flexslider.js">
+    </script>
+    <script type="text/javascript" src="~/ss/user/js/jquery.carouFredSel-6.2.1-packed.js">
+    </script>
+    <script type="text/javascript" src='~/ss/user/js/jquery.elevatezoom.js'>
+    </script>
+    <script type="text/javascript" src="~/ss/user/js/script.min.js">
+    </script>
+</body>

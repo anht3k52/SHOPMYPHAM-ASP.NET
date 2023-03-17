@@ -1,0 +1,57 @@
+﻿@model webnangcao1.Models.taikhoan
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Login 2</title>
+
+    <link href="~/ss/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/~/ss/admin/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/ss/admin/css/animate.css" rel="stylesheet">
+    <link href="~/ss/admin/css/style.css" rel="stylesheet">
+
+</head>
+<body class="gray-bg">
+        <div class="loginColumns animated fadeInDown" >
+            <div class="row">
+             
+                  
+                <div class="col-md-6" style="float:none;margin:auto">
+                    <center>
+                        <h2>Đăng nhập</h2>
+                    </center>
+                        <div class="ibox-content">
+                            @using (Html.BeginForm())
+                            {
+                                <div>
+                                    @Html.ValidationSummary(false)
+                                </div>
+                                <div class="form-group">
+                                    @Html.TextBoxFor(m => m.Tentaikhoan, htmlAttributes: new { @class = "form-control", placeholder = "user name" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.PasswordFor(m => m.Matkhau, htmlAttributes: new { @class = "form-control", placeholder = "password" })
+                                </div>
+                                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+
+                                <p class="text-muted text-center">
+                                    <small>Đăng nhập để thực hiện chức năng</small>
+                                </p>
+
+                            }
+
+                        </div>
+                </div>
+               
+            </div>    
+         </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+﻿@model IEnumerable<webnangcao1.Models.donhang>
+@{
+    Layout = null;
+}
+!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/ss/user/images/favicon.png">
+    <title>Welcome to BEDDINGSHOP</title>
+    <link href="~/ss/user/css/bootstrap.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100' rel='stylesheet' type='text/css'>
+    <link href="~/ss/user/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/ss/user/css/flexslider.css" type="text/css" media="screen" />
+    <link href="~/ss/user/css/sequence-looptheme.css" rel="stylesheet" media="all" />
+    <link href="~/ss/user/css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.~/ss/user/js/1.3.0/respond.min.js"></script><![endif]-->
+
+</head>
+<body id="home">
+    <div class="wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2">
+                        <div class="logo"><a href="index.html"><img src="~/ss/user/images/logoo.png" alt="FlatShop"></a></div>
+                    </div>
+                    <div class="col-md-10 col-sm-10">
+                        <div class="header_top">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="header_bottom">
+
+                            <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="@Url.Action("Index", "Home")">Trang chủ</a></li>
+                                    <li><a href="@Url.Action("Index", "dangnhap")">Đăng nhập</a></li>
+                                    <li><a href="@Url.Action("Create", "taikhoans")">Đăng ký</a></li>\
+                                    <li><a href="@Url.Action("Index", "chitietsanpham")">Sản phẩm</a></li>
+                                    <li><a href="@Url.Action("Index", "xemdonhang")">Đơn hàng</a></li>
+                                    <li><a href="@Url.Action("Index", "cart")">Giỏ hàng</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-horizontal" style="background: white ">
+
+            <center>
+                <h2>Danh sách đơn hàng</h2>
+            </center>
+
+            <br />
+            <div class="col-md-offset-3 col-md-6">
+                <table class="table table-bordered" style="background: white ">
+                    <tr>
+                        <th>
+                            Họ tên
+                        </th>
+                        <th>
+                            Ngày đặt
+                        </th>
+                        <th>
+                            Tình trạng đơn hàng
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modeitem => item.taikhoan.fullname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ngaydat)
+                            </td>
+                            <td>
+                                <div style="color:red">Đa dat hang</div>
+                            </td>
+                            <td>
+                                <button class="btn-primary">
+                                    @Html.ActionLink("Chi tiết", "xemchitiet", new { id = item.Madonhang }, new { @style = "color:white;" })
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                    <br />
+                    <br />
+                </table>
+                </div>
+                <div class="clearfix"></div>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <div class="footer">
+                    <div class="footer-info">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="footer-logo"><a href="#"><img src="~/ss/user/images/logo.png" alt=""></a></div>
+                                </div>
+                                <div class="col-md-3 col-sm-6">
+                                    <h4 class="title">Địa chỉ <strong>liên hệ</strong></h4>
+                                    <p>Đường 200, Nguyễn Ba Đình, Hà Nội , Việt Nam</p>
+                                    <p>Số điện thoại : (084) 1900 1008</p>
+                                    <p>Email : shopbanchangagoidem@gmail.com</p>
+                                </div>
+                                <div class="col-md-3 col-sm-6">
+                                    <h4 class="title">Hỗ trợ</h4>
+                                    <ul class="support">
+                                        <li><a href="#">Fanpage</a></li>
+                                        <li><a href="#">Instagram</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright-info">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>Bản quyền thuộc về<a href="#">Nghiêm xuân hải và Nghuyễn thanh trường</a></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="social-icon">
+                                        <li><a href="#" class="linkedin"></a></li>
+                                        <li><a href="#" class="google-plus"></a></li>
+                                        <li><a href="#" class="twitter"></a></li>
+                                        <li><a href="#" class="facebook"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript" src="~/ss/user/js/jquery-1.10.2.min.js"></script>
+                <script type="text/javascript" src="~/ss/user/js/jquery.easing.1.3.js"></script>
+                <script type="text/javascript" src="~/ss/user/js/bootstrap.min.js"></script>
+                <script type="text/javascript" src="~/ss/user/js/jquery.sequence-min.js"></script>
+                <script type="text/javascript" src="~/ss/user/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+                <script defer src="~/ss/user/js/jquery.flexslider.js"></script>
+                <script type="text/javascript" src="~/ss/user/js/script.min.js"></script>
+</body>
+
+</html>
+

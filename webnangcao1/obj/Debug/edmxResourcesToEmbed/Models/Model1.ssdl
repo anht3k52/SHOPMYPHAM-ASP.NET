@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quanlyshopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="chitietdon">
+    <Key>
+      <PropertyRef Name="Madonhang" />
+      <PropertyRef Name="Masanpham" />
+    </Key>
+    <Property Name="Madonhang" Type="int" Nullable="false" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="thanhtien" Type="int" />
+    <Property Name="Masanpham" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="donhang">
+    <Key>
+      <PropertyRef Name="Madonhang" />
+    </Key>
+    <Property Name="Madonhang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tentaikhoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="dathanhtoan" Type="int" />
+    <Property Name="tinhtrangdathang" Type="int" />
+    <Property Name="ngaydat" Type="datetime" />
+    <Property Name="ngaygiao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Loaisanpham">
+    <Key>
+      <PropertyRef Name="Maloaisanpham" />
+    </Key>
+    <Property Name="Maloaisanpham" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tenloaisanpham" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sanpham">
+    <Key>
+      <PropertyRef Name="Masanpham" />
+    </Key>
+    <Property Name="Masanpham" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Maloaisanpham" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tensanpham" Type="nvarchar(max)" />
+    <Property Name="Thongtin" Type="nvarchar(max)" />
+    <Property Name="Ngay" Type="datetime" />
+    <Property Name="Hinhchinh" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hinh1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hinh2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hinh3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hinh4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gia" Type="int" />
+    <Property Name="Tinhtrang" Type="int" />
+    <Property Name="thuoctinh" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="taikhoan">
+    <Key>
+      <PropertyRef Name="Tentaikhoan" />
+    </Key>
+    <Property Name="Tentaikhoan" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Matkhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="50" />
+    <Property Name="quyen" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="sdt" Type="int" />
+  </EntityType>
+  <Association Name="FK_chitietdon_donhang">
+    <End Role="donhang" Type="Self.donhang" Multiplicity="1" />
+    <End Role="chitietdon" Type="Self.chitietdon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="donhang">
+        <PropertyRef Name="Madonhang" />
+      </Principal>
+      <Dependent Role="chitietdon">
+        <PropertyRef Name="Madonhang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_chitietdon_Sanpham">
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="1" />
+    <End Role="chitietdon" Type="Self.chitietdon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanpham">
+        <PropertyRef Name="Masanpham" />
+      </Principal>
+      <Dependent Role="chitietdon">
+        <PropertyRef Name="Masanpham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_donhang_taikhoan">
+    <End Role="taikhoan" Type="Self.taikhoan" Multiplicity="0..1" />
+    <End Role="donhang" Type="Self.donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="taikhoan">
+        <PropertyRef Name="Tentaikhoan" />
+      </Principal>
+      <Dependent Role="donhang">
+        <PropertyRef Name="Tentaikhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sanpham_Loaisanpham">
+    <End Role="Loaisanpham" Type="Self.Loaisanpham" Multiplicity="0..1" />
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Loaisanpham">
+        <PropertyRef Name="Maloaisanpham" />
+      </Principal>
+      <Dependent Role="Sanpham">
+        <PropertyRef Name="Maloaisanpham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="quanlyshopModelStoreContainer">
+    <EntitySet Name="chitietdon" EntityType="Self.chitietdon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="donhang" EntityType="Self.donhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loaisanpham" EntityType="Self.Loaisanpham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sanpham" EntityType="Self.Sanpham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="taikhoan" EntityType="Self.taikhoan" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_chitietdon_donhang" Association="Self.FK_chitietdon_donhang">
+      <End Role="donhang" EntitySet="donhang" />
+      <End Role="chitietdon" EntitySet="chitietdon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_chitietdon_Sanpham" Association="Self.FK_chitietdon_Sanpham">
+      <End Role="Sanpham" EntitySet="Sanpham" />
+      <End Role="chitietdon" EntitySet="chitietdon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_donhang_taikhoan" Association="Self.FK_donhang_taikhoan">
+      <End Role="taikhoan" EntitySet="taikhoan" />
+      <End Role="donhang" EntitySet="donhang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sanpham_Loaisanpham" Association="Self.FK_Sanpham_Loaisanpham">
+      <End Role="Loaisanpham" EntitySet="Loaisanpham" />
+      <End Role="Sanpham" EntitySet="Sanpham" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

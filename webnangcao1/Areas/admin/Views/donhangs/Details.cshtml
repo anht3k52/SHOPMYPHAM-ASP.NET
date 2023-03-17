@@ -1,0 +1,59 @@
+﻿@model webnangcao1.Models.donhang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/adminLayout1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>donhang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dathanhtoan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dathanhtoan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tinhtrangdathang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tinhtrangdathang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngaydat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaydat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngaygiao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaygiao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.taikhoan.Matkhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taikhoan.Matkhau)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Madonhang }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

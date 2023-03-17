@@ -1,0 +1,95 @@
+﻿@model IEnumerable<webnangcao1.Models.taikhoan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/adminLayout1.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Quản lý tài khoản</h2>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Tài khoản</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+
+                </div>
+            </div>
+            <div class="ibox-content">
+
+
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Tentaikhoan)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Matkhau)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.fullname)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.quyen)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.sdt)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tentaikhoan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Matkhau)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fullname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.quyen)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sdt)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Tentaikhoan }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Tentaikhoan }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Tentaikhoan })
+                    </td>
+                </tr>
+                    }
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

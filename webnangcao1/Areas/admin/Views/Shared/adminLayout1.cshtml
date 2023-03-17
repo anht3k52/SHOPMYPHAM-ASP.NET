@@ -1,0 +1,147 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Dashboard</title>
+
+    <link href="~/ss/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/ss/admin/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="~/ss/admin/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="~/ss/admin/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+
+    <link href="~/ss/admin/css/animate.css" rel="stylesheet">
+    <link href="~/ss/admin/css/style.css" rel="stylesheet">
+
+
+    @RenderSection("styles", required: false)
+</head>
+<body>
+
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                           
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold">Danh mục quản lý</strong>
+                                    </span>
+                                </span>
+                            </a>
+                          
+                        </div>
+                        <div class="logo-element">
+                            IN+
+                        </div>
+                    </li>
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Trang chủ</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="/Home/Index">Trang chủ</a></li>
+                            <li>@Html.ActionLink("Trang chủ admin", "Index", "Home")</li> 
+                        </ul>
+
+                    </li>
+                    <li class="">
+                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Quản lý danh mục</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>@Html.ActionLink("Sản phẩm", "Index", "Sanphams")</li>
+                            <li>@Html.ActionLink("Loại sản phẩm", "Index", "Loaisanphams")</li>
+                            <li>@Html.ActionLink("Đơn hàng", "Index", "donhangs")</li>
+                            <li>@Html.ActionLink("Chi tiết đơn hàng", "Index", "chitietdons")</li>
+                            <li>@Html.ActionLink("Tài khoản", "Index", "taikhoans")</li>
+
+                        </ul>
+
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                      
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message">Chào mừng trở lại</span>
+                        </li>
+                    
+
+
+                        <li>
+                            <a href="/admin/login/logout">
+                                <i class="fa fa-sign-out"></i> Đăng xuất
+                            </a>
+                        </li>
+                     
+                    </ul>
+
+                </nav>
+            </div>
+
+
+            @RenderBody()
+
+        </div>
+        
+     
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="~/ss/admin/js/jquery-2.1.1.js"></script>
+    <script src="~/ss/admin/js/bootstrap.min.js"></script>
+    <script src="~/ss/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/ss/admin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+
+    <!-- Peity -->
+    <script src="~/ss/admin/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="~/ss/admin/js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="~/ss/admin/js/inspinia.js"></script>
+    <script src="~/ss/admin/js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="~/ss/admin/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+
+    <!-- Toastr -->
+    <script src="~/ss/admin/js/plugins/toastr/toastr.min.js"></script>
+
+
+    <script>
+    $(document).ready(function () {
+            setTimeout(function () {
+                toastr.options = {
+                    closeButton: true,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 4000
+                };
+                toastr.success('Responsive Admin Theme', 'Welcome to INSPINIA');
+
+            }, 1300);
+
+    </script>
+
+
+</body>
+</html>

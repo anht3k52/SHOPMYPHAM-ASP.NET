@@ -1,0 +1,53 @@
+﻿@model List<webnangcao1.Models.Sanpham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/user_Layout1.cshtml";
+}
+<body>
+    <div class="wrapper">
+     
+        <div class="clearfix">
+        </div>
+        <div class="container_fullwidth">
+            <div class="container">
+                <div class="row">
+                  
+                    <div class="col-md-12">
+                        <div class="clearfix">
+                        </div>
+                        <div class="products-list">
+                         
+
+                            @Html.Action("sanphama","layout")
+
+                          
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+          
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+     
+    </div>
+    <!-- Bootstrap core JavaScript==================================================-->
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js">
+    </script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js">
+    </script>
+    <script type="text/javascript" src="js/bootstrap.min.js">
+    </script>
+    <script defer src="js/jquery.flexslider.js">
+    </script>
+    <script type="text/javascript" src="js/jquery.sequence-min.js">
+    </script>
+    <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js">
+    </script>
+    <script type="text/javascript" src="js/script.min.js">
+    </script>
+</body>
+

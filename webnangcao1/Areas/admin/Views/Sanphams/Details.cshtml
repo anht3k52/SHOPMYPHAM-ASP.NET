@@ -1,0 +1,115 @@
+﻿@model webnangcao1.Models.Sanpham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/adminLayout1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sanpham</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tensanpham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tensanpham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Thongtin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thongtin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinhchinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinhchinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinh1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinh2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinh3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinh4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinh4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tinhtrang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tinhtrang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thuoctinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thuoctinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Loaisanpham.Tenloaisanpham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loaisanpham.Tenloaisanpham)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Masanpham }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

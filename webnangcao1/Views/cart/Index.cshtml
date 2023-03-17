@@ -1,0 +1,123 @@
+﻿@model List<webnangcao1.Models.cart>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/user_Layout1.cshtml";
+}
+
+
+
+<div class="container_fullwidth">
+    <div class="container shopping-cart">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="title">
+                    Giỏ hàng
+                </h3>
+                <div class="clearfix">
+                </div>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Hình ảnh
+                            </th>
+                            <th style="width:400px">
+                                Thông tin
+                            </th>
+                            <th>
+                                Giá
+                            </th>
+                            <th style="width:20px">
+                                Số lượng
+                            </th>
+                            <th>
+                                Thành tiền
+                            </th>
+                            <th>
+                                Cập nhật
+                            </th>
+                            <th>
+                                Xóa
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="@item.thongtin.Hinhchinh" alt="">
+                                </td>
+                                <td>
+                                    <div class="shop-details">
+                                        <div class="productname">
+                                            @item.thongtin.Tensanpham
+                                        </div>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <h5>
+                                        @Html.FormatValue((item.thongtin.Gia), "{0:#,###}")
+                                    </h5>
+                                </td>
+
+                                @using (Html.BeginForm("capnhatgio", "cart", new { @masanpham = item.masanpham }))
+                                {
+                                    <td>
+
+                                        @Html.TextBox("txtsoluong", item.soluong)
+                                    </td>
+                                    <td>
+                                        <h5>
+                                            <strong class="red">
+                                                @Html.FormatValue((item.soluong * item.thongtin.Gia), "{0:#,###}")
+                                            </strong>
+                                        </h5>
+                                    </td>
+                                    <td>
+                                        <input type="submit" value="Cập nhật" class="btn-danger" style="width:100px;height:30px" />
+                                    </td>
+                                }
+                                <td>
+                                    @using (Html.BeginForm("XoaGioHang", "cart", new { @masanpham = item.masanpham }))
+                                    {
+                                        <input type="submit" value="Xóa" class="btn-danger" style="width:100px;height:30px" />
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="clearfix">
+                </div>
+                <div class="row">
+
+                    <div class="col-md-4" style="float:none;margin:auto">
+                        <div class="shippingbox">
+                            <div class="subtotal">
+                                <h5>
+                                    Thành tiền:
+                                </h5>
+                                <span>
+                                    @Html.FormatValue(Model.Sum(x => x.soluong * x.thongtin.Gia), "{0:#,###}")
+                                </span>
+                            </div>
+                            <td colspan="6" style="text-align:right;color:blue; width:40px">
+                                @using (Html.BeginForm("DatHang", "cart", new { @class = "" }))
+                                {
+                                    <input type="submit" value="Đặt hàng" class="btn-danger" style="width:100px;height:30px" />
+                                }
+                            </td>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+</div>
